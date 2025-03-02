@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kaltura Player Developer Reference</title>
+  <link rel="icon" href="https://www.kaltura.com/favicon.ico" />
+  <!-- CSP: Allow necessary external scripts -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.kaltura.com https://www.google-analytics.com https://www.googletagmanager.com blob:;
+    worker-src 'self' blob:;
+    style-src 'self' 'unsafe-inline';
+    connect-src 'self' https://*.kaltura.com http://analytics.kaltura.com https://www.google-analytics.com https://pagead2.googlesyndication.com blob:;
+    img-src 'self' data: https://*.kaltura.com https://corp.kaltura.com https://www.google-analytics.com;
+    media-src 'self' data: blob: https://*.kaltura.com;
+    frame-src 'self' https://*.kaltura.com;
+    object-src 'none';
+    base-uri 'none';
+    form-action 'none';
+    block-all-mixed-content;
+  ">
+  <script src="https://cdnapisec.kaltura.com/p/2421271/embedPlaykitJs/uiconf_id/56335032"></script>
+  <!-- Link to our CSS files -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/controls.css">
+</head>
+<body>
+  <header class="header">
+    <img src="https://corp.kaltura.com/wp-content/uploads/2024/02/Logo-kaltura.svg" alt="Kaltura Logo" class="logo" />
+    <span class="tagline">AI-infused video experiences that boost customer and employee engagement and success.</span>
+  </header>
+  <main class="main-container">
+    <section class="player-section">
+      <div class="player-wrapper">
+        <div id="kaltura_player"></div>
+      </div>
+      <div id="log-container" class="log-container">
+        <h2 class="log-title">Event Log</h2>
+      </div>
+    </section>
+    <section class="controls-section">
+      <!-- Controls container will be populated by JavaScript -->
+      <div class="controls-container"></div>
+      
+      <div class="explanations">
+        <h2>Kaltura Player Developer Reference</h2>
+        <h3>Interactive Mode</h3>
+        <p>
+          Loaded using the RAPT API (Partner ID: 2421271, uiConf ID: 43473121):
+        </p>
+        <pre><code>var interactivePathPlayer = PathKalturaPlayer.setup(kconfig);
+interactivePathPlayer.loadMedia({ playlistId: '1_zxnf9ha7' });</code></pre>
+        <p>
+          Use <code>interactivePathPlayer.addListener(...)</code> to capture interactive events.
+        </p>
+        <h3>Regular Mode</h3>
+        <p>
+          Loaded using the standard API (Partner ID: 2421271, uiConf ID: 43473121):
+        </p>
+        <pre><code>kalturaPlayer = KalturaPlayer.setup(regularConfig);
+kalturaPlayer.loadMedia({ entryId: '1_71gyojxl' });</code></pre>
+        <p>
+          Timeline markers and chapters are available only in Regular mode.
+        </p>
+        <h3>Additional Resources</h3>
+        <p>
+          See the 
+          <a href="https://github.com/kaltura/kaltura-player-js/blob/master/docs/guides.md" target="_blank" rel="noopener noreferrer">
+            Kaltura Player Documentation</a>. For advanced customizations, review the 
+            <a href="https://github.com/kaltura/playkit-js-ui/blob/master/docs/guides.md" target="_blank">Player UI</a>, 
+            <a href="https://github.com/kaltura/playkit-js-ui-managers/blob/master/docs/guide.md" target="_blank">UI-Managers</a>, and 
+            <a href="https://github.com/kaltura/playkit-js-ui-managers/blob/master/docs/guide.md" target="_blank">Player Plugins</a> documentation.
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Load our JavaScript modules -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

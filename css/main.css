@@ -1,0 +1,70 @@
+/* Basic Reset & Typography */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+:root {
+  /* Color variables */
+  --color-primary: #006EFA;
+  --color-primary-dark: #0056d2;
+  --color-text: #282828;
+  --color-background: #F8F8F5;
+  --color-border: #ccc;
+  --color-error: #FF3D23;
+  --color-white: #FFF;
+  --color-black: #000;
+  
+  /* Spacing variables */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 10px;
+  --spacing-lg: 20px;
+  
+  /* Border radius */
+  --border-radius: 4px;
+}
+
+body { 
+  font-family: 'Source Sans Pro', sans-serif; 
+  background: var(--color-background); 
+  color: var(--color-text); 
+  line-height: 1.5; 
+}
+
+.header { 
+  background: var(--color-text); 
+  color: var(--color-white); 
+  padding: var(--spacing-lg); 
+  text-align: center; 
+}
+
+.header .logo { 
+  height: 40px; 
+  vertical-align: middle; 
+  margin-right: var(--spacing-md); 
+}
+
+/* Layout */
+.main-container { 
+  display: flex; 
+  flex-wrap: wrap; 
+  padding: var(--spacing-lg); 
+  gap: var(--spacing-lg); 
+}
+
+.player-section, 
+.controls-section { 
+  flex: 1 1 300px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: var(--spacing-lg); 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { 
+  .main-container { 
+    flex-direction: column; 
+  } 
+}
